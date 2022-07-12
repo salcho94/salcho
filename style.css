@@ -267,6 +267,7 @@ em { color: #29b5d3; }
 	border: 1px solid #CCC;
 	margin: 0 30px 0 0;
 }
+.canvas { background: #eee; }
 .question{padding-top: 20px; font-weight: bold;} 
 .quiz_submit{border:1px solid tomato; padding:5px; border-radius:5px; color:tomato;cursor:pointer;}
 .page_btn{
