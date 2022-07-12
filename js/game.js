@@ -1,4 +1,4 @@
-var canvas = document.getElementById("myCanvas");
+var canvas = document.getElementById("myGame");
 var ctx = canvas.getContext("2d");
 var ballRadius = 10;
 var x = canvas.width/2;
@@ -118,6 +118,12 @@ function drawLives() {
 }
 
 function draw() {
+  $(document).keydown(function(event){
+    if(event.keyCode == 38 || event.keyCode == 40){
+      console.log(event);
+      event.preventDefault();
+    }
+  });
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   drawBricks();
   drawBall();
@@ -140,7 +146,6 @@ function draw() {
       lives--;
       if(!lives) {
         alert("GAME OVER");
-        document.location.reload();
       }
       else {
         x = canvas.width/2;
@@ -164,4 +169,13 @@ function draw() {
   requestAnimationFrame(draw);
 }
 
-draw();
+
+
+function playGame(){
+  $('#startGame').css('display','none');
+  draw();
+}
+
+function stopGame(){
+  location.reload(true);
+}

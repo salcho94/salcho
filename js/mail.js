@@ -1,3 +1,9 @@
+const btnProgressElem = document.querySelector('.btn-progress');
+const btnInitiateElem = document.querySelector('.btn-initiate');
+const progressBarElem = document.querySelector('.progress-bar__bar');
+
+
+
 function sendMail(){
     let form = $('#gform').serialize();
     axios
@@ -12,7 +18,12 @@ function sendMail(){
   $('#sendEmail').click(function(){
     if(validateForm()){
        sendMail();
+       progressBarElem.classList.add('active');
+       setTimeout(function() {
+        progressBarElem.classList.remove('active');
+      }, 2500);
     }
     
   });
   
+
